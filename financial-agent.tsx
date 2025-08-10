@@ -735,7 +735,7 @@ export default function Component() {
         {/* Main Content */}
         <div className="flex-1 flex flex-col">
           <Tabs defaultValue="chat" className="flex-1 flex flex-col">
-            <TabsList className="grid w-full grid-cols-2 mx-6 mt-4">
+            <TabsList className="grid w-full grid-cols-2  mt-2">
               <TabsTrigger value="chat" className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4" />
                 AI Chat
@@ -746,22 +746,22 @@ export default function Component() {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="chat" className="flex-1 flex flex-col m-6 mt-4">
-              <Card className="flex flex-col h-[calc(100vh-200px)]">
-                <CardHeader className="pb-3 flex-shrink-0">
+            <TabsContent value="chat" className="flex-1 flex flex-col mx-6  mb-2">
+              <Card className="flex flex-col h-[calc(90vh-60px)]">
+                <CardHeader className="py-1 px-4 flex-shrink-0">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                      <Brain className="w-4 h-4 text-white" />
+                    <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                      <Brain className="w-3 h-3 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">AI Financial Agent</CardTitle>
-                      <CardDescription>Ask me anything about your finances</CardDescription>
+                      <CardTitle className="text-base leading-tight">AI Financial Agent</CardTitle>
+                      <CardDescription className="text-xs leading-tight">Ask me anything about your finances</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <Separator className="flex-shrink-0" />
                 <div className="flex-1 overflow-hidden">
-                  <ScrollArea className="h-full p-4">
+                  <ScrollArea className="h-full p-1">
                     <div className="space-y-4">
                     {messages.map((message) => (
                       <div
@@ -841,7 +841,7 @@ export default function Component() {
                 
                 {/* Suggested Questions */}
                 {inputMessage === "" && (
-                  <div className="p-4 border-b border-gray-100">
+                  <div className="px-4  border-b border-gray-100">
                     <h4 className="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-blue-500" />
                       {financialSummary.companyName !== "No document uploaded" 
@@ -862,7 +862,7 @@ export default function Component() {
                         </Button>
                       ))}
                     </div>
-                    <div className="mt-2 flex flex-wrap gap-2">
+                    <div className="p-1 flex flex-wrap gap-1">
                       {suggestedQuestions.slice(3, 6).map((question, index) => (
                         <Button
                           key={index + 3}
@@ -880,7 +880,7 @@ export default function Component() {
                         <summary className="text-xs text-gray-500 cursor-pointer hover:text-gray-700">
                           Show more questions...
                         </summary>
-                        <div className="mt-2 flex flex-wrap gap-2">
+                        <div className="mt-1 flex flex-wrap gap-1">
                           {suggestedQuestions.slice(6).map((question, index) => (
                             <Button
                               key={index + 6}
@@ -898,8 +898,8 @@ export default function Component() {
                   </div>
                 )}
                 
-                <div className="p-4 flex-shrink-0">
-                  <div className="flex gap-2">
+                <div className="px-4 py-1 flex-shrink-0">
+                  <div className="flex gap-1">
                     <Input
                       placeholder={
                         financialSummary.companyName !== "No document uploaded"
@@ -922,7 +922,7 @@ export default function Component() {
               </Card>
             </TabsContent>
 
-            <TabsContent value="summary" className="flex-1 m-6 mt-4">
+            <TabsContent value="summary" className="flex-1 m-0 mt-1">
               <div className="space-y-6">
                 {/* Key Metrics */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
